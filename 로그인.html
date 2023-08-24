@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="h1font.css">
+  <style type="text/css">
+    body {
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0; /* 기본 마진 제거 */
+      padding: 0; /* 기본 패딩 제거 */
+
+      position: relative; /* 배경 이미지를 포함한 부모 요소로 설정 */
+    }
+    body::before {
+      content: ""; /* 가상 요소를 생성 */
+      position: absolute; /* 절대 위치로 배치 */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-image: url("mov.jpg"); /* 배경 이미지 경로를 설정 */
+      opacity: 0.4; /* 배경 이미지의 투명도를 0.8로 설정 */
+      z-index: -1; /* 배경 이미지를 body의 뒤로 이동하여 내용과 겹치지 않도록 함 */
+    }
+    form {
+      text-align: center;
+    }
+    h1, h2, h3 {
+      text-align: center;
+    }
+    h1 {
+      font-size: 70px; 
+    }
+    h2 {
+      font-size: 28px; 
+    }
+    hr {
+      border: 1.5px solid black; /* 구분선 두께와 색상 설정 */
+    }
+    .center {
+      display: flex;
+      justify-content: center;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    input[type="text"] {
+      padding: 13px;
+      margin: 10px;
+      background-color: black;
+      color: white;
+      font-size: 16px;
+    }
+    input[type="submit"]{
+      padding: 17px 25px 5px;
+      margin: 10px;
+      background-image: url("cloud.png"); /* 이미지 경로를 정확하게 설정해야 합니다 */
+      background-size: contain; /* 이미지를 버튼 내에 맞추어 표시 */
+      background-repeat: no-repeat; /* 이미지 반복 표시 비활성화 */
+      background-position: center; 
+      background-color: transparent;
+      color: black;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+    }
+    button{
+      padding: 15px 30px 5px 30px;
+      margin: 5px;
+      background-image: url("cloud.png"); /* 이미지 경로를 정확하게 설정해야 합니다 */
+      background-size: contain; /* 이미지를 버튼 내에 맞추어 표시 */
+      background-repeat: no-repeat; /* 이미지 반복 표시 비활성화 */
+      background-position: center; 
+      background-color: transparent;
+      color: black;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Cloud9</h1>
+  <h2>반가워요!<div class="header">지금 바로 <div class="cloud">&nbsp;Cloud9</div>을 시작해보세요.</h2></div>
+  <form method="get" action="메인.html" onsubmit="return checkForm()">
+    <input type="text" name="id" value="ID 입력" onfocus="clearValue(this)"><br>
+    <input type="text" name="pwd" value="PW 입력" onfocus="clearValue(this)"><br>
+    <input type="submit" value="확인">
+  </form><hr>
+  <h3>아직 계정이 없으신가요?</h3>
+  <div class="center">
+     <button onclick="account()">회원가입</button>
+  </div>
+</body>
+<script>
+    function account() {
+      var url = "회원가입.html";
+      window.location.href = url;
+    }
+    function checkForm() {
+      var id = document.getElementsByName("id")[0].value;
+      var pwd = document.getElementsByName("pwd")[0].value;
+
+      if (id.trim() === "" || pwd.trim() === "") {
+        alert("아이디와 비밀번호를 모두 입력해주세요.");
+        return false; // 폼 제출을 중단함
+      }
+    }
+    function clearValue(element) {
+      if (element.value === element.defaultValue) {
+        element.value = '';
+      }
+    }
+</script>
+</html>
