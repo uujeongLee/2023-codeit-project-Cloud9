@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style type="text/css">
+    body{background-color:black;color:white;}
+    h1 {
+      text-align: center;
+      font-size: 70px; 
+    }
+    #movieone{font-size:24px;}
+    #display-id {
+      font-size: 32px; /* innerText의 글씨 크기를 32px로 조정 */
+    }
+    .movie-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    table {
+      width: 100%; /* 테이블 너비를 100%로 설정 */
+      table-layout: auto; /* 셀의 너비와 테이블 너비의 비율 고정 */
+      border-collapse: collapse;
+    }
+    td {
+      width: 20%;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Cloud9</h1>
+  <h2><span id="display-id"></span>님, 안녕하세요!</h2>
+  <select name="category" size="1" onchange="showTable(this)">
+      <option value="all" selected>카테고리</option>
+      <option value="movie">영화</option>
+      <option value="drama">드라마</option>
+  </select>
+  <hr>
+  <div id="movieone"></div>
+</body>
+<script>
+    function getQueryStringValue(key) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(key);
+    }
+
+    // 메인 페이지 로딩 시 URL 매개변수에서 아이디 가져와서 출력
+    document.addEventListener("DOMContentLoaded", function() {
+      var id = getQueryStringValue("id");
+      document.getElementById("display-id").innerText = id;
+    });
+    
+    function showTable(selectElement) {
+      var selectedValue = selectElement.value;
+      var Container = document.getElementById("movieone");
+
+      if (selectedValue === "movie") {
+        var movieTable = '<table>' +
+  '<tr><td><img src="바비.jpg" class="movie-image"></td><td><img src="범도.jpg" class="movie-image"></td><td><img src="토토로.jpg" class="movie-image"></td>' +
+  '<td><img src="아바타.jpg" class="movie-image"></td><td><img src="극한.jpg" class="movie-image"></td></tr>' +
+  '</table>';
+        Container.innerHTML = "영화"+movieTable;
+      } else if (selectedValue === "drama") {
+        var dramaTable = '<table>' +
+  '<tr><td><img src="2521.jpg" class="movie-image"></td><td><img src="사불.jpg" class="movie-image"></td><td><img src="도깨비.jpg" class="movie-image"></td>' +
+  '<td><img src="슈룹.jpg" class="movie-image"></td><td><img src="우영우.jpg" class="movie-image"></td></tr>' +
+  '</table>';
+        Container.innerHTML = "드라마"+dramaTable;
+      } else {
+        Container.innerHTML = "";
+      }
+    }
+</script>
+</html>
