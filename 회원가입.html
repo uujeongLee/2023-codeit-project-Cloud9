@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" type="text/css" href="h1font.css">
   <style type="text/css">
     body {
       justify-content: center;
@@ -8,7 +9,7 @@
       height: 100vh;
       margin: 0; /* 기본 마진 제거 */
       padding: 0; /* 기본 패딩 제거 */
-      overflow: hidden; /* 내용이 넘칠 때 스크롤 막음 */
+
       position: relative; /* 배경 이미지를 포함한 부모 요소로 설정 */
     }
     body::before {
@@ -38,7 +39,37 @@
       display: flex;
       justify-content: center;
     }
+    input[type="submit"]{
+      padding: 17px 25px 5px;
+      margin: 10px;
+      background-image: url("cloud.png"); /* 이미지 경로를 정확하게 설정해야 합니다 */
+      background-size: contain; /* 이미지를 버튼 내에 맞추어 표시 */
+      background-repeat: no-repeat; /* 이미지 반복 표시 비활성화 */
+      background-position: center; 
+      background-color: transparent;
+      color: black;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+    }
+    input[type="date"]{
+      margin-left: 38px;
+    }
 
+    input[type="text"],[type="password"],[type="date"] {
+      padding: 13px;
+      margin: 10px;
+      background-color: white;
+      color: black;
+      font-size: 13px;
+      border: 2px solid black
+    }
+    .idmargin{
+      margin-left: 16px;
+    }
+    .pwmargin{
+      margin-left: 8px;
+    }
   </style>
 </head>
 <body>
@@ -47,8 +78,8 @@
   <form method="get" action="로그인.html" onsubmit="return checkForm()">
     이름 :&nbsp;<input type="text" name="name"><br>
     생년월일 :&nbsp;<input type="date" name="birth"><br>
-    아이디 :&nbsp;<input type="text" name="id"><br>
-    비밀번호 :&nbsp;<input type="password" name="pwd"><br>
+    <div class="idmargin">ID :&nbsp;<input type="text" name="id"><br></div>
+    <div class="pwmargin">PW :&nbsp;<input type="password" name="pwd"><br></div>
     <input type="submit" value="확인" onclick="alert('가입이 완료되었습니다.')">
   </form>
 </body>
