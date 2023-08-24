@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" type="text/css" href="h1font.css">
   <style type="text/css">
     body{background-color:black;color:white;}
     h1 {
@@ -25,16 +26,33 @@
       width: 20%;
       text-align: center;
     }
+    .movie-image:hover {
+      transform: scale(1.1); /* 이미지 크기 확대 */
+    }
+
+    select {
+  font-size: 13px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  background-color: black;
+  color: white;
+}
+  .header {
+      display: flex;
+      align-items: center;
+    }
   </style>
 </head>
 <body>
   <h1>Cloud9</h1>
-  <h2><span id="display-id"></span>님, 안녕하세요!</h2>
+  <div class="header">
+  <h2><span id="display-id"></span>님, 안녕하세요!   </h2>
   <select name="category" size="1" onchange="showTable(this)">
       <option value="all" selected>카테고리</option>
       <option value="movie">영화</option>
       <option value="drama">드라마</option>
   </select>
+  </div>
   <hr>
   <div id="movieone"></div>
 </body>
@@ -56,7 +74,7 @@
 
       if (selectedValue === "movie") {
         var movieTable = '<table>' +
-  '<tr><td><img src="바비.jpg" class="movie-image"></td><td><img src="범도.jpg" class="movie-image"></td><td><img src="토토로.jpg" class="movie-image"></td>' +
+  '<tr><td><a href="링크1"><img src="바비.jpg" class="movie-image"></a></td><td><img src="범도.jpg" class="movie-image"></td><td><img src="토토로.jpg" class="movie-image"></td>' +
   '<td><img src="아바타.jpg" class="movie-image"></td><td><img src="극한.jpg" class="movie-image"></td></tr>' +
   '</table>';
         Container.innerHTML = "영화"+movieTable;
