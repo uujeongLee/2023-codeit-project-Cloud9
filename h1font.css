@@ -1,0 +1,12 @@
+h1 {
+  font-family: 'Forte', sans-serif; /* 원하는 폰트명을 적용합니다 */
+  font-size: 70px;
+}
+
+h2 {
+  margin: 10px; /* 왼쪽과 오른쪽에 20px의 공백 추가 */
+}
+
+.cloud {
+  font-family: 'Forte', sans-serif; /* 원하는 폰트명을 적용합니다 */
+}

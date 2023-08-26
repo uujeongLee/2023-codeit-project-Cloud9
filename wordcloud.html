@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Cloud Example</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-cloud@1.2.7/build/d3.layout.cloud.js"></script>
+</head>
+<body>
+    <div id="wordcloud"></div>
+
+    <script>
+        // 데이터 생성 (단어 빈도수에 따라 배열 형태로)
+        const words = [
+            { text: "Romance", size: 60, link: "detail.html" },
+            { text: "Romance", size: 60, link: "detail.html" },
+            { text: "thriller", size: 56, link: "banana.html" },
+            { text: "love", size: 52, link: "orange.html" },
+            { text: "love", size: 48, link: "orange.html" },
+            { text: "love", size: 44, link: "orange.html" },
+            { text: "love", size: 40, link: "orange.html" },
+            { text: "love", size: 36, link: "orange.html" },
+            { text: "love", size: 32, link: "orange.html" },
+            { text: "love", size: 28, link: "orange.html" },
+            { text: "thriller", size: 56, link: "banana.html" },
+            { text: "love", size: 52, link: "orange.html" },
+            { text: "love", size: 48, link: "orange.html" },
+            { text: "love", size: 44, link: "orange.html" },
+            { text: "love", size: 40, link: "orange.html" },
+            { text: "love", size: 36, link: "orange.html" },
+            { text: "love", size: 32, link: "orange.html" },
+            { text: "love", size: 28, link: "orange.html" },
+            { text: "love", size: 24, link: "orange.html" },
+            { text: "love", size: 44, link: "orange.html" },
+            { text: "love", size: 40, link: "orange.html" },
+            { text: "love", size: 36, link: "orange.html" },
+            { text: "love", size: 32, link: "orange.html" },
+            { text: "love", size: 28, link: "orange.html" },
+            { text: "love", size: 24, link: "orange.html" },
+            { text: "love", size: 20, link: "orange.html" },
+            { text: "love", size: 16, link: "orange.html" },
+            { text: "love", size: 12, link: "orange.html" },
+            { text: "love", size: 8, link: "orange.html" },
+            { text: "love", size: 4, link: "orange.html" },
+            { text: "love", size: 2, link: "orange.html" },
+            // ... 추가적인 데이터
+        ];
+
+              // 단어에 고유한 랜덤한 색상 할당하기 위한 함수
+              const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
+        words.forEach(word => word.color = colorScale(Math.random()));
+
+        // 워드 클라우드 레이아웃 생성
+        const layout = d3.layout.cloud()
+            .size([400, 400]) // 정사각형 모양으로 설정
+            .words(words)
+            .padding(5)
+            .rotate(() => (~~(Math.random() * 2) * 90)) // 랜덤한 회전 각도
+            .font("sans-serif")
+            .fontSize(d => d.size)
+            .on("end", draw); // 레이아웃이 끝나면 draw 함수 호출
+
+        layout.start();
+
+        // 워드 클라우드 그리기
+        function draw(words) {
+            const svg = d3.select("#wordcloud").append("svg")
+                .attr("width", layout.size()[0])
+                .attr("height", layout.size()[1])
+                .append("g")
+                .attr("transform", `translate(${layout.size()[0] / 2},${layout.size()[1] / 2})`);
+
+            const text = svg.selectAll("text")
+                .data(words)
+                .enter().append("text")
+                .style("font-size", d => `${d.size}px`)
+                .style("font-family", "sans-serif")
+                .style("fill", d => d.color) // 단어별 랜덤 색상 적용
+                .attr("text-anchor", "middle")
+                .attr("transform", d => `translate(${d.x},${d.y}) rotate(${d.rotate})`)
+                .text(d => d.text)
+                .on("click", d => {
+                    if (d.link) {
+                        window.location.href = d.link;
+                    }
+                });
+
+            text.append("title")
+                .text(d => d.link || ''); // 마우스를 올렸을 때 툴팁에 링크를 표시
+        }
+    </script>
+</body>
+</html>

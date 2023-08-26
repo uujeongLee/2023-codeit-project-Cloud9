@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLOUD9</title>
+    <link rel="stylesheet" type="text/css" href="h1font.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Song+Myung&display=swap" rel="stylesheet">
+    <!--폰트 바꾸기-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@700&display=swap" rel="stylesheet">
+    
+    
+    <style type="text/css">
+        #main_title{display: block; color: white; background-color: #000000; position: fixed; margin: 0; 
+                 text-align: center; font-weight: 500; font-size: 50px; font-family: 'Song Myung', serif; width: 100%; top: 0; left: 0;}
+        nav{position: fixed; border: 1px solid gray; border-radius:10px; width: 12%; float: left; margin-top: 160px; margin-left: 20px; top: 12vh; left: 30px; padding: 10px 10px;}
+        nav a {display: block; margin: 0 0 5px 5px;}
+        article {border: 1px solid gray; border-radius:10px; width: 60%; margin-top: 250px; margin-left: 18%; padding: 10px; 
+                background-image: url("articleback.jpeg"); background-size: 100%;}
+        section {background-color: #fff; background-color: rgba(255, 255, 255, 0.7);  padding:10px; height:auto; border-radius: 10px; align-content: center; }
+        aside {position: fixed; margin-top: 100px; border-radius:10px; border: 1px solid gray;width: 17%; top: 20vh; right: 30px; padding: 5px; text-align: center; min-width: 120px;}
+        aside p{display:  inline-block; width: 90%; padding: 0px; margin:5px; font-weight: bold; min-width: 75px; border-radius: 50px; border: 1px solid gray;} 
+        aside p:hover{color: #fff; background-color: #656565;}
+        footer{vertical-align: baseline;}
+        div, p, input, em, span, strong, textarea, a, button { margin: 0; padding: 0; font-family: 'Noto Sans KR', sans-serif; letter-spacing: -0.05em;
+                list-style: none; text-decoration: none; line-height: inherit; word-break: keep-all; color: #000;}
+
+        ul{list-style-type: none;}
+        li{margin: 20px 0 20px 0;}
+        .sub_title{text-align: center;}
+        .sub_title h1 {font-family: 'Song Myung', serif; font-size: 50px; letter-spacing: -0.05em; font-weight: 500; text-align: center; color: #000;
+                line-height: 50%;}
+        .sub_title p {font-size: 15px; margin-top: -30px;} 
+        #last {margin: 50px 0 0 0; padding: 20px}
+
+</style>
+</head>
+<body>
+    <header>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/d3-cloud@1.2.7/build/d3.layout.cloud.js"></script>
+        <script>
+            function changecolor(element) {
+                element.style.transition = "background-color 0.5s ease";
+                element.style.transition = "color 0.5s ease";
+                element.style.backgroundColor = "white";
+                element.style.color = "black";
+            }
+            function changeoriginal(element) {
+                element.style.transition = "background-color 0.5s ease";
+                element.style.transition = "color 0.5s ease";
+                element.style.backgroundColor = "black";
+                element.style.color = "white";
+            }
+        </script>
+        <a href="로그인.html"><div id="main_title" onmouseover="changecolor(this);" onmouseout="changeoriginal(this)"><h1>Cloud9</h1></div></a>
+    </header>
+    <nav>
+        <ul class="navi">
+            <li>
+                <a href="메인.html">HOME</a>
+            </li>
+            <li>
+                <a href="로그인.html">LOGIN</a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <article>
+        <style>
+            table {margin: 5px;}
+            table td img{margin: 0 20px 10px 50px; width: 90%; border-radius: 5px; text-align: center;}
+            .recommend_title{margin-left : 60px; font-family: 'IBM Plex Sans KR', sans-serif; font-size: 40px; letter-spacing: -0.05em; font-weight: 500; line-height: 150%;}
+            .list_title{font-family: 'Song Myung', serif; font-size: 40px; letter-spacing: -0.05em; margin-left: 50px; font-weight: 500; line-height: 120%;}
+            .list_content{ margin:10px 20px 0 60px; line-height: 200%; }
+        </style> 
+        <script type="text/javascript">
+            function bigger(element) {
+                element.style.transition = "scale 0.5s ease";
+                element.style.transform = "scale(1.3)";
+
+            }
+            function original(element) {
+                element.style.transition = "background-color 0.5s ease";
+                element.style.transform = "scale(1)";
+            }
+        </script>
+        <section>
+            <p class="recommend_title">
+                Romance &nbsp 추천 &nbsp 결과 :
+            </p>
+        </section>
+
+        <section id="movie4">
+            <table>
+                <tr>
+                    <td>
+                        <img src="https://i.namu.wiki/i/_nUIVusJAjBa2dMzcxxTbJJriKNv-2NtV2mXFBDMX1RNoHtdGryLRgJyWCzHvJuUpzw66hzK0TGHs8h1houTs16vM2qokj1yN-Dg1yWgF167aiBqYLqipWnqLP3vCiy40OidzRAdDlEEH1GjlEYAJA.webp">
+                    </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <p class="list_title">어바웃 타임</p>
+                    <p class="list_content"> 
+                        장르 | 코미디, 로맨스 <br>
+                        감독 | 리처드 커티스 <br>
+                        출연 | 도널 글리슨, 레이첼 맥아담스, 빌 나이 <br>
+                        상영 시간 | 123분 <br>
+                        스트리밍 | NETFLIX, PRIME VIDEO <br>
+                    </p>
+                    <p class="list_content">
+                        영화 소개 | 모태솔로 팀(돔놀 글리슨)은 성인이 된 날, 아버지(빌 나이)로부터 놀랄만한 가문의 비밀을 듣게 된다. 바로 시간을 
+                        되돌릴 수 있는 능력이 있다는 것! 그것이 비록 히틀러를 죽이거나 여신과 뜨거운 사랑을 할 수는 없지만, 여자친구는 만들어 줄 순 있으리..
+                         꿈을 위해 런던으로 간 팀은 우연히 만난 사랑스러운 여인 메리에게 첫눈에 반하게 된다. 그녀의 사랑을 얻기 위해 자신의 특별한 능력을 
+                         마음껏 발휘하는 팀. 어설픈 대시, 어색한 웃음은 리와인드! 뜨거웠던 밤은 더욱 뜨겁게 리플레이! 꿈에 그리던 그녀와 매일매일 최고의 
+                         순간을 보낸다. 하지만 그와 그녀의 사랑이 완벽해질수록 팀을 둘러싼 주변 상황들은 미묘하게 엇갈리고, 예상치 못한 사건들이 여기저기
+                         나타나기 시작하는데… 어떠한 순간을 다시 살게 된다면, 과연 완벽한 사랑을 이룰 수 있을까?</p>
+                  </td>
+                </tr>
+              </table>
+        </section>
+        
+    </article>
+    <aside>
+
+        <div id="wordcloud"></div>
+
+        <script>
+            // 데이터 생성 (단어 빈도수에 따라 배열 형태로)
+            const words = [
+                { text: "Romance", size: 60, link: "detail.html" },
+                { text: "Romance", size: 60, link: "detail.html" },
+                { text: "thriller", size: 56, link: "banana.html" },
+                { text: "love", size: 52, link: "orange.html" },
+                { text: "love", size: 48, link: "orange.html" },
+                { text: "love", size: 44, link: "orange.html" },
+                { text: "love", size: 40, link: "orange.html" },
+                { text: "love", size: 36, link: "orange.html" },
+                { text: "love", size: 32, link: "orange.html" },
+                { text: "love", size: 28, link: "orange.html" },
+                { text: "love", size: 24, link: "orange.html" },
+                { text: "love", size: 20, link: "orange.html" },
+                { text: "love", size: 16, link: "orange.html" },
+                { text: "love", size: 12, link: "orange.html" },
+                { text: "love", size: 8, link: "orange.html" },
+                { text: "love", size: 4, link: "orange.html" },
+                { text: "love", size: 2, link: "orange.html" },
+                { text: "love", size: 48, link: "orange.html" },
+                { text: "love", size: 44, link: "orange.html" },
+                { text: "love", size: 40, link: "orange.html" },
+                { text: "love", size: 36, link: "orange.html" },
+                { text: "love", size: 32, link: "orange.html" },
+                { text: "love", size: 28, link: "orange.html" },
+                { text: "love", size: 24, link: "orange.html" },
+                { text: "love", size: 20, link: "orange.html" },
+                { text: "love", size: 16, link: "orange.html" },
+                { text: "love", size: 12, link: "orange.html" },
+                { text: "love", size: 8, link: "orange.html" },
+                { text: "love", size: 4, link: "orange.html" },
+                { text: "love", size: 2, link: "orange.html" },
+                // ... 추가적인 데이터
+            ];
+    
+                  // 단어에 고유한 랜덤한 색상 할당하기 위한 함수
+                  const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
+            words.forEach(word => word.color = colorScale(Math.random()));
+    
+            // 워드 클라우드 레이아웃 생성
+            const layout = d3.layout.cloud()
+                .size([265, 265]) // 정사각형 모양으로 설정
+                .words(words)
+                .padding(5)
+                .rotate(() => (~~(Math.random() * 2) * 90)) // 랜덤한 회전 각도
+                .font("sans-serif")
+                .fontSize(d => d.size)
+                .on("end", draw); // 레이아웃이 끝나면 draw 함수 호출
+    
+            layout.start();
+    
+            // 워드 클라우드 그리기
+            function draw(words) {
+                const svg = d3.select("#wordcloud").append("svg")
+                    .attr("width", layout.size()[0])
+                    .attr("height", layout.size()[1])
+                    .append("g")
+                    .attr("transform", `translate(${layout.size()[0] / 2},${layout.size()[1] / 2})`);
+    
+                const text = svg.selectAll("text")
+                    .data(words)
+                    .enter().append("text")
+                    .style("font-size", d => `${d.size}px`)
+                    .style("font-family", "sans-serif")
+                    .style("fill", d => d.color) // 단어별 랜덤 색상 적용
+                    .attr("text-anchor", "middle")
+                    .attr("transform", d => `translate(${d.x},${d.y}) rotate(${d.rotate})`)
+                    .text(d => d.text)
+                    .on("click", d => {
+                        if (d.link) {
+                            window.location.href = d.link;
+                        }
+                    });
+    
+                text.append("title")
+                    .text(d => d.link || ''); // 마우스를 올렸을 때 툴팁에 링크를 표시
+            }
+        </script>
+
+    
+    </aside>
+
+    <footer>
+        <p id="last">
+        CLOUD9<br>
+        숙명여자대학교 이유정<br>
+        숙명여자대학교 박유진
+        </p>    
+    </footer>
+</body>
+</html>
+
+
+   
+
+<body>
+    
