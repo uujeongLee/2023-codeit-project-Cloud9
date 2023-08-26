@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLOUD9</title>
+    <link rel="stylesheet" type="text/css" href="h1font.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Song+Myung&display=swap" rel="stylesheet">
+    <style type="text/css">
+        #main_title{display: block; color: white; background-color: #000000; position: fixed; margin: 0; 
+                 text-align: center; font-weight: 500; font-size: 50px; font-family: 'Song Myung', serif; width: 100%; top: 0; left: 0;}
+        nav{position: fixed; border: 1px solid gray; border-radius:10px; width: 12%; float: left; margin-top: 160px; margin-left: 20px; top: 12vh; left: 30px; padding: 10px 10px;}
+        nav a {display: block; margin: 0 0 5px 5px;}
+        article {border: 1px solid gray; border-radius:10px; width: 60%; margin-top: 250px; margin-left: 18%; padding: 10px; 
+                background-image: url("articleback.jpeg"); background-size: 100%;}
+        section {background-color: #fff; background-color: rgba(255, 255, 255, 0.7);  padding:10px; height:auto; border-radius: 10px; align-content: center; }
+        aside {position: fixed; margin-top: 100px; border-radius:10px; border: 1px solid gray;width: 17%; top: 20vh; right: 30px; padding: 5px; text-align: center; min-width: 120px;}
+        aside p{display:  inline-block; width: 90%; padding: 0px; margin:5px; font-weight: bold; min-width: 75px; border-radius: 50px; border: 1px solid gray;} 
+        aside p:hover{color: #fff; background-color: #656565;}
+        footer{vertical-align: baseline;}
+        div, p, input, em, span, strong, textarea, a, button { margin: 0; padding: 0; font-family: 'Noto Sans KR', sans-serif; letter-spacing: -0.05em;
+                list-style: none; text-decoration: none; line-height: inherit; word-break: keep-all; color: #000;}
+
+        ul{list-style-type: none;}
+        li{margin: 20px 0 20px 0;}
+        .sub_title{text-align: center;}
+        .sub_title h1 {font-family: 'Song Myung', serif; font-size: 50px; letter-spacing: -0.05em; font-weight: 500; text-align: center; color: #000;
+                line-height: 50%;}
+        .sub_title p {font-size: 15px; margin-top: -30px;} 
+        #last {margin: 50px 0 0 0; padding: 20px}
+
+</style>
+</head>
+<body>
+    <header>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/d3-cloud@1.2.7/build/d3.layout.cloud.js"></script>
+        <script>
+            function changecolor(element) {
+                element.style.transition = "background-color 0.5s ease";
+                element.style.transition = "color 0.5s ease";
+                element.style.backgroundColor = "white";
+                element.style.color = "black";
+            }
+            function changeoriginal(element) {
+                element.style.transition = "background-color 0.5s ease";
+                element.style.transition = "color 0.5s ease";
+                element.style.backgroundColor = "black";
+                element.style.color = "white";
+            }
+        </script>
+        <a href="로그인.html"><div id="main_title" onmouseover="changecolor(this);" onmouseout="changeoriginal(this)"><h1>Cloud9</h1></div></a>
+    </header>
+    <nav>
+        <ul class="navi">
+            <li>
+                <a href="메인.html">HOME</a>
+            </li>
+            <li>
+                <a href="로그인.html">LOGIN</a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <article>
+        <style>
+            table {margin: 10px;}
+            table td img{margin: 0 20px 10px 50px; width: 90%; border-radius: 5px; text-align: center;}
+            .recommend_title{font-family: 'Song Myung', serif; font-size: 40px; letter-spacing: -0.05em; margin-left: 0px; font-weight: 500; line-height: 120%;}
+            .list_title{font-family: 'Song Myung', serif; font-size: 40px; letter-spacing: -0.05em; margin-left: 50px; font-weight: 500; line-height: 120%;}
+            .list_content{ margin:10px 20px 0 60px; line-height: 200%; }
+        </style> 
+        <script type="text/javascript">
+            function bigger(element) {
+                element.style.transition = "scale 0.5s ease";
+                element.style.transform = "scale(1.3)";
+
+            }
+            function original(element) {
+                element.style.transition = "background-color 0.5s ease";
+                element.style.transform = "scale(1)";
+            }
+        </script>
+        <section id="movie4">
+            <table>
+                <tr>
+                    <td>
+                        <img src="https://i.namu.wiki/i/fuw5x8fpWXjDVnQ0UoHO86dGY3Ssf0BCj69T7Fyp_LSnBxUaErQJAmW0PRtLehjkOy8obIXa7SD0Y0j5rxdPxkjSrtsVh1ejzxyyIpfA5gZxvEjwX0tUUl959y8v6y4C03BNGQH9V-Pg4cVHWfD_oQ.webp">
+                    </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <p class="list_title">바비</p>
+                    <p class="list_content"> 
+                        장르 | 모험, 블랙코미디, 판타지, 로맨스 <br>
+                        감독 | 그레타 거윅 <br>
+                        출연 | 마고 로비, 라이언 고슬링 <br>
+                        상영 시간 | 114분 <br>
+                        스트리밍 | NETFLIX, PRIME VIDEO <br>
+                    </p>
+                    <p class="list_content">
+                        영화 소개 | 영화는 아기 인형을 가지고 노는 소녀들에 대한 나레이션(헬렌 미렌)으로 시작된다. 존재하는 인형이 아기 인형뿐이라 항상 엄마 놀이만 하던 소녀들 앞에 성인 모습의 바비인형이 나타나고, 소녀들은 기뻐하며 아기 인형을 부숴 버리고 바비를 환대한다.[1] 여성들의 다양한 직업과 생활상을 나타낸 바비인형들이 나레이션과 함께 소개된다. 나레이션은 바비인형 덕분에 다양한 여성상이 묘사되었다, "적어도 그들(바비인형들)은 그렇게 생각한다"는 약간의 비아냥으로 마무리된다.</p>
+                  </td>
+                </tr>
+              </table>
+        </section>
+        
+    </article>
+    <aside>
+
+        <div id="wordcloud"></div>
+
+        <script>
+            // 데이터 생성 (단어 빈도수에 따라 배열 형태로)
+            const words = [
+                { text: "Romance", size: 60, link: "detail.html" },
+                { text: "Romance", size: 60, link: "detail.html" },
+                { text: "thriller", size: 56, link: "banana.html" },
+                { text: "love", size: 52, link: "orange.html" },
+                { text: "love", size: 48, link: "orange.html" },
+                { text: "love", size: 44, link: "orange.html" },
+                { text: "love", size: 40, link: "orange.html" },
+                { text: "love", size: 36, link: "orange.html" },
+                { text: "love", size: 32, link: "orange.html" },
+                { text: "love", size: 28, link: "orange.html" },
+                { text: "love", size: 24, link: "orange.html" },
+                { text: "love", size: 20, link: "orange.html" },
+                { text: "love", size: 16, link: "orange.html" },
+                { text: "love", size: 12, link: "orange.html" },
+                { text: "love", size: 8, link: "orange.html" },
+                { text: "love", size: 4, link: "orange.html" },
+                { text: "love", size: 2, link: "orange.html" },
+                { text: "love", size: 48, link: "orange.html" },
+                { text: "love", size: 44, link: "orange.html" },
+                { text: "love", size: 40, link: "orange.html" },
+                { text: "love", size: 36, link: "orange.html" },
+                { text: "love", size: 32, link: "orange.html" },
+                { text: "love", size: 28, link: "orange.html" },
+                { text: "love", size: 24, link: "orange.html" },
+                { text: "love", size: 20, link: "orange.html" },
+                { text: "love", size: 16, link: "orange.html" },
+                { text: "love", size: 12, link: "orange.html" },
+                { text: "love", size: 8, link: "orange.html" },
+                { text: "love", size: 4, link: "orange.html" },
+                { text: "love", size: 2, link: "orange.html" },
+                // ... 추가적인 데이터
+            ];
+    
+                  // 단어에 고유한 랜덤한 색상 할당하기 위한 함수
+                  const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
+            words.forEach(word => word.color = colorScale(Math.random()));
+    
+            // 워드 클라우드 레이아웃 생성
+            const layout = d3.layout.cloud()
+                .size([265, 265]) // 정사각형 모양으로 설정
+                .words(words)
+                .padding(5)
+                .rotate(() => (~~(Math.random() * 2) * 90)) // 랜덤한 회전 각도
+                .font("sans-serif")
+                .fontSize(d => d.size)
+                .on("end", draw); // 레이아웃이 끝나면 draw 함수 호출
+    
+            layout.start();
+    
+            // 워드 클라우드 그리기
+            function draw(words) {
+                const svg = d3.select("#wordcloud").append("svg")
+                    .attr("width", layout.size()[0])
+                    .attr("height", layout.size()[1])
+                    .append("g")
+                    .attr("transform", `translate(${layout.size()[0] / 2},${layout.size()[1] / 2})`);
+    
+                const text = svg.selectAll("text")
+                    .data(words)
+                    .enter().append("text")
+                    .style("font-size", d => `${d.size}px`)
+                    .style("font-family", "sans-serif")
+                    .style("fill", d => d.color) // 단어별 랜덤 색상 적용
+                    .attr("text-anchor", "middle")
+                    .attr("transform", d => `translate(${d.x},${d.y}) rotate(${d.rotate})`)
+                    .text(d => d.text)
+                    .on("click", d => {
+                        if (d.link) {
+                            window.location.href = d.link;
+                        }
+                    });
+    
+                text.append("title")
+                    .text(d => d.link || ''); // 마우스를 올렸을 때 툴팁에 링크를 표시
+            }
+        </script>
+
+    
+    </aside>
+
+    <footer>
+        <p id="last">
+        CLOUD9<br>
+        숙명여자대학교 이유정<br>
+        숙명여자대학교 박유진
+        </p>    
+    </footer>
+</body>
+</html>
+
+
+   
+
+<body>
+    

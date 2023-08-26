@@ -41,15 +41,31 @@
       display: flex;
       align-items: center;
     }
+    
+  a:link {
+  color : rgb(255, 255, 255);
+  text-decoration: none;
+}
+a:visited {
+  color : rgb(255, 248, 248);
+  text-decoration: none;
+}
+a:hover {
+  color : rgb(255, 255, 255);
+  text-decoration: none;
+}
+a:active {
+  color : rgb(255, 255, 255);
+  text-decoration: none;
+}
   </style>
 </head>
 <body>
-  <h1>Cloud9</h1>
+  <a href="로그인.html"><div id="main_title" onmouseover="changecolor(this);" onmouseout="changeoriginal(this)"><h1>Cloud9</h1></div></a>
   <div class="header">
   <h2><span id="display-id"></span>님, 안녕하세요!   </h2>
   <select name="category" size="1" onchange="showTable(this)">
-      <option value="all" selected>카테고리</option>
-      <option value="movie">영화</option>
+      <option value="movie" selected>영화</option>
       <option value="drama">드라마</option>
   </select>
   </div>
@@ -57,36 +73,45 @@
   <div id="movieone"></div>
 </body>
 <script>
-    function getQueryStringValue(key) {
-      const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get(key);
-    }
+  function getQueryStringValue(key) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(key);
+  }
 
-    // 메인 페이지 로딩 시 URL 매개변수에서 아이디 가져와서 출력
-    document.addEventListener("DOMContentLoaded", function() {
-      var id = getQueryStringValue("id");
-      document.getElementById("display-id").innerText = id;
-    });
-    
-    function showTable(selectElement) {
-      var selectedValue = selectElement.value;
-      var Container = document.getElementById("movieone");
+  // 메인 페이지 로딩 시 URL 매개변수에서 아이디 가져와서 출력
+  document.addEventListener("DOMContentLoaded", function() {
+    var id = getQueryStringValue("id");
+    document.getElementById("display-id").innerText = id;
 
-      if (selectedValue === "movie") {
-        var movieTable = '<table>' +
-  '<tr><td><a href="링크1"><img src="바비.jpg" class="movie-image"></a></td><td><img src="범도.jpg" class="movie-image"></td><td><img src="토토로.jpg" class="movie-image"></td>' +
-  '<td><img src="아바타.jpg" class="movie-image"></td><td><img src="극한.jpg" class="movie-image"></td></tr>' +
-  '</table>';
-        Container.innerHTML = "영화"+movieTable;
-      } else if (selectedValue === "drama") {
-        var dramaTable = '<table>' +
-  '<tr><td><img src="2521.jpg" class="movie-image"></td><td><img src="사불.jpg" class="movie-image"></td><td><img src="도깨비.jpg" class="movie-image"></td>' +
-  '<td><img src="슈룹.jpg" class="movie-image"></td><td><img src="우영우.jpg" class="movie-image"></td></tr>' +
-  '</table>';
-        Container.innerHTML = "드라마"+dramaTable;
-      } else {
-        Container.innerHTML = "";
-      }
+    // 기본적으로 영화 카테고리의 이미지를 표시
+    var Container = document.getElementById("movieone");
+    var movieTable = '<table>' +
+      '<tr><td><a href="바비.html"><img src="바비.jpg" class="movie-image"></a></td><td><img src="범도.jpg" class="movie-image"></td><td><img src="토토로.jpg" class="movie-image"></td>' +
+      '<td><img src="아바타.jpg" class="movie-image"></td><td><img src="극한.jpg" class="movie-image"></td></tr>' +
+      '</table>';
+    Container.innerHTML = "영화" + movieTable;
+  });
+
+  function showTable(selectElement) {
+    var selectedValue = selectElement.value;
+    var Container = document.getElementById("movieone");
+
+    if (selectedValue === "movie") {
+      var movieTable = '<table>' +
+        '<tr><td><a href="바비.html"><img src="바비.jpg" class="movie-image"></a></td><td><img src="범도.jpg" class="movie-image"></td><td><img src="토토로.jpg" class="movie-image"></td>' +
+        '<td><img src="아바타.jpg" class="movie-image"></td><td><img src="극한.jpg" class="movie-image"></td></tr>' +
+        '</table>';
+      Container.innerHTML = "영화" + movieTable;
+    } else if (selectedValue === "drama") {
+      var dramaTable = '<table>' +
+        '<tr><td><img src="2521.jpg" class="movie-image"></td><td><img src="사불.jpg" class="movie-image"></td><td><img src="도깨비.jpg" class="movie-image"></td>' +
+        '<td><img src="슈룹.jpg" class="movie-image"></td><td><img src="우영우.jpg" class="movie-image"></td></tr>' +
+        '</table>';
+      Container.innerHTML = "드라마" + dramaTable;
+    } else {
+      Container.innerHTML = "";
     }
+  }
 </script>
+
 </html>
